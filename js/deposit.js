@@ -37,20 +37,27 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
  const withdrawElement=document.getElementById('withdraw-total')
  const totalWithdrawBalanceString=withdrawElement.innerText;
  const totalWithdrawBalance=parseFloat(totalWithdrawBalanceString);
- withdrawElement.innerText=totalWithdrawBalance + totalWithdrawAmount;
+ 
 
 
  const newBalance=document.getElementById('balance-total');
 const newBalanceString=newBalance.innerText;
 const totalBalance=parseFloat(newBalanceString);
 
-const restAmount=totalBalance - totalWithdrawAmount;
-
-newBalance.innerText=restAmount;
+getWithdraw.value =''
 
 if(totalWithdrawAmount>totalBalance){
     alert('Thapraia kan gorom kore felbo.Tor kase eto taka thakle to withdraw korbi.Fokinni kothkar')
+    return;
 }
+withdrawElement.innerText=totalWithdrawBalance + totalWithdrawAmount;
+const restAmount=totalBalance - totalWithdrawAmount;
+newBalance.innerText=restAmount;
 
- getWithdraw.value =''
+
+
+
+
+
+
 })
